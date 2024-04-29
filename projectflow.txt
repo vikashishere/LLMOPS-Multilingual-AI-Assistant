@@ -1,0 +1,9 @@
+1. Create a venv named "multilingual" and install requirements:
+    * conda create -p multilingual python=3.8 -y
+    * conda activate C:\Users\Personal\Desktop\DSMP2023-2024\Self_Researched_Projects\Proj-7\Multilingual-AI-Assistant\multilingual
+    * git init
+    * create .gitignore file ("New-Item -ItemType File .gitignore" or "touch .gitignore")
+    * Add following to .gitignore file:
+        > multilingual
+    * create readme.md file ("New-Item -ItemType File readme.md" or "touch readme.md")
+    * Setup the template.py file and run it to create project structure.
