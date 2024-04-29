@@ -9,3 +9,4 @@
     * Setup the template.py file and run it to create project structure.
     * Also work on the setup.py file and requirements.txt then "pip install -r requirements.txt"
     * Add "multilingual_assistant.egg-info/*" to .gitignore
+2. Add code to app.py and then src.helper.py file 
