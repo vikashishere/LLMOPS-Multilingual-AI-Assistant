@@ -7,3 +7,5 @@
         > multilingual
     * create readme.md file ("New-Item -ItemType File readme.md" or "touch readme.md")
     * Setup the template.py file and run it to create project structure.
+    * Also work on the setup.py file and requirements.txt then "pip install -r requirements.txt"
+    * Add "multilingual_assistant.egg-info/*" to .gitignore
