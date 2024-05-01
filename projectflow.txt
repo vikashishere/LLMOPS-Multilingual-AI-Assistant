@@ -8,5 +8,10 @@
     * create readme.md file ("New-Item -ItemType File readme.md" or "touch readme.md")
     * Setup the template.py file and run it to create project structure.
     * Also work on the setup.py file and requirements.txt then "pip install -r requirements.txt"
-    * Add "multilingual_assistant.egg-info/*" to .gitignore
-2. Add code to app.py and then src.helper.py file 
+    * Add "multilingual_assistant.egg-info/*" and ".env" to .gitignore
+2. Add code to app.py and then src.helper.py file
+3. Next is to generate Gemini api key:
+    > Go to google deepmind website > Technologies > Gemini > Build with Gemini
+    > ai.google.dev > Get api key in Google AI studio > Get API key > Create API key
+    > Create new project or select existing one
+4. Now set this api as an env var within .env file: [GOOGLE_API_KEY = "AIzaSyCf6bXXXXXRYNW4_lQhVSZexE"]
