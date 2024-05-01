@@ -1,10 +1,10 @@
 1. Create a venv named "multilingual" and install requirements:
-    * conda create -p multilingual python=3.8 -y
-    * conda activate C:\Users\Personal\Desktop\DSMP2023-2024\Self_Researched_Projects\Proj-7\Multilingual-AI-Assistant\multilingual
+    * conda create -p genai python=3.9 -y
+    * conda activate C:\Users\Personal\Desktop\DSMP2023-2024\Self_Researched_Projects\Proj-7\Multilingual-AI-Assistant\genai
     * git init
     * create .gitignore file ("New-Item -ItemType File .gitignore" or "touch .gitignore")
     * Add following to .gitignore file:
-        > multilingual
+        > genai
     * create readme.md file ("New-Item -ItemType File readme.md" or "touch readme.md")
     * Setup the template.py file and run it to create project structure.
     * Also work on the setup.py file and requirements.txt then "pip install -r requirements.txt"
@@ -15,3 +15,36 @@
     > ai.google.dev > Get api key in Google AI studio > Get API key > Create API key
     > Create new project or select existing one
 4. Now set this api as an env var within .env file: [GOOGLE_API_KEY = "AIzaSyCf6bXXXXXRYNW4_lQhVSZexE"]
+5. App is now ready to be used, run on terminal: "streamlit run app.py"
+6. Straight forward deployment to AWS EC2:
+    > Create an EC2 instance > name: "genaiproject" > Ubuntu > 22.04 > t2.large 8GB
+    > select/create keypair > allow http/https traffic > storage: 10GB
+    > once created, go to instance ID and Connect 
+    > Once connected, run below commands:
+        sudo apt update
+        sudo apt-get update
+        sudo apt-get update
+        sudo apt install git curl unzip tar make sudo vim wget -y
+        git clone "Your-repository"
+        *** Now do 'LS' to check the downloaded repo and then 'cd repo' to change dir ***
+        > At this step, we need to setup the .env on our instance:
+            * touch .env
+            * sudo nano .env
+            * write - [GOOGLE_API_KEY = "your api"] - then ctrl+s, ctrl+x
+        sudo apt install python3-pip
+        pip3 install -r requirements.txt 
+        (run "sudo apt-get install portaudio19-dev" if you get any error related to pyaudio installation)
+
+7. Now do the port mappinf of the EC2 instance:
+    > Go to instance > security > security groups > edit inbound rules
+    > add rule > add port 8501 > save rules
+
+8. Now connect to instance and:
+    *** Temporary running ***
+    python3 -m streamlit run app.py
+    *** Permanent running ***
+    nohup python3 -m streamlit run app.py
+
+*** Remember, this app will no work on cloud as it cant receive voice input ***
+*** Also dont forget to terminate your EC2 instance ***
+
